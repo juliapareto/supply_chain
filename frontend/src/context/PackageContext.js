@@ -9,9 +9,12 @@ export const packagesReducer = (state, action) => {
                 packages: action.payload
             }
         case 'CREATE_PACKAGES':
-            console.log('CREATE_PACKAGES case')
             return{
                 packages: [action.payload, ...state.packages]
+            }
+        case 'DELETE_PACKAGE':
+            return{
+                packages: state.packages.filter((w) => w._id !== action.payload._id)
             }
         default:
             return state
