@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { usePackagesContext } from '../hooks/usePackagesContext';
 
 import PackageDetails from '../components/PackageDetails'
@@ -20,7 +20,7 @@ const Home = () => {
             }
         }
         fetchPackages()
-    }, [])
+    }, [dispatch])
     return (
         <div className="home">
             <div className='packages'>

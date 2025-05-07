@@ -1,4 +1,6 @@
-import { usePackagesContext } from "../hooks/usePackagesContext" 
+import { usePackagesContext } from "../hooks/usePackagesContext"
+import { formatDistanceToNow, format } from 'date-fns'
+
 
 const PackageDetails = ({ pack }) => {
 
@@ -20,10 +22,13 @@ const PackageDetails = ({ pack }) => {
             <h4>{pack.owner}</h4>
             <p>- <strong>Content: </strong>{pack.content}</p>
             <p>- <strong>Weight: </strong>{pack.weight}</p>
-            <p>- <strong>Tracking since: </strong>{new Date(pack.createdAt).toLocaleString('sv-SE', { hour12: false })}</p>
-            <span onClick = {handleClick}> del </span>
+            <p title={format(new Date(pack.createdAt), 'yyyy-MM-dd HH:mm:ss')}>
+                - <strong>Tracking since: </strong>{formatDistanceToNow(new Date(pack.createdAt), {addSuffix: true})}
+            </p>
+            <span className="material-symbols-outlined" onClick = {handleClick}> delete </span>
         </div>
     )
 }
+//{new Date(pack.createdAt).toLocaleString('sv-SE', { hour12: false })}
 
 export default PackageDetails
