@@ -1,4 +1,5 @@
 Dependencies to download:
+a. Download NodeJS from: nodejs.org
 
 
 How to run:

@@ -9,6 +9,7 @@ const PackageForm = () =>{
     const [content, setContent] = useState('');
     const [weight, setWeight] = useState('');
     const [error, setError] = useState(null);
+    const [emptyFields, setEmptyFields] = useState([]);
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -24,12 +25,14 @@ const PackageForm = () =>{
 
         if (!response.ok) {
             setError(json.error)
+            setEmptyFields(json.emptyFields)
         }
         if (response.ok) {
             setOwner('')
             setContent('')
             setWeight('')
             setError(null)
+            setEmptyFields([])
             console.log('New package added')
             dispatch({type: 'CREATE_PACKAGES', payload: json})
         }
@@ -38,30 +41,33 @@ const PackageForm = () =>{
     return (
         <form className='create' onSubmit={handleSubmit}>
             <h3>Add a new package</h3>
+            
             <label>Package owner</label>
             <input
                 type="text"
                 onChange={(e) => setOwner(e.target.value)}
                 value={owner}
+                className={emptyFields.includes('owner') ? 'error' : ''}
             />
 
-            
-        <label>Package content</label>
-        <input
-            type="text"
-            onChange={(e) => setContent(e.target.value)}
-            value={content}
-        />
+            <label>Package content</label>
+            <input
+                type="text"
+                onChange={(e) => setContent(e.target.value)}
+                value={content}
+                className={emptyFields.includes('content') ? 'error' : ''}
+            />
 
-        <label>Package weight</label>
-        <input
-            type="text"
-            onChange={(e) => setWeight(e.target.value)}
-            value={weight}
-        />
+            <label>Package weight</label>
+            <input
+                type="text"
+                onChange={(e) => setWeight(e.target.value)}
+                value={weight}
+                className={emptyFields.includes('weight') ? 'error' : ''}
+            />
 
-        <button>Add package</button>
-        {error && <div className="error">{error}</div>}
+            <button>Add package</button>
+            {error && <div className="error">{error}</div>}
         </form>
     )
 }

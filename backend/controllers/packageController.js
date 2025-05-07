@@ -27,6 +27,21 @@ const getPackage = async (req, res) => {
 const createPackage = async (req, res) => {
     const {content, owner, weight} = req.body
 
+    let emptyFields = []
+
+    if (!content) {
+      emptyFields.push('content')
+    }
+    if (!owner) {
+      emptyFields.push('owner')
+    }
+    if (!weight) {
+      emptyFields.push('weight')
+    }
+    if (emptyFields.length > 0) {
+      return res.status(400).json({ error: 'Please fill in all fields', emptyFields })
+    }
+
     try{
         const package = await Package.create({content, owner, weight})
         res.status(200).json(package)
