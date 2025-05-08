@@ -1,14 +1,22 @@
 import { usePackagesContext } from "../hooks/usePackagesContext"
+import { useAuthContext } from "../hooks/useAuthContext"
 import { formatDistanceToNow, format } from 'date-fns'
 
 
 const PackageDetails = ({ pack }) => {
 
     const { dispatch } = usePackagesContext()
+    const { user } = useAuthContext()
 
     const handleClick = async () => {
+        if (!user){
+            return
+        }
         const response = await fetch('/api/packages/' + pack._id, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${user.token}`
+            }
         })
         const json = await response.json()
 
@@ -29,6 +37,5 @@ const PackageDetails = ({ pack }) => {
         </div>
     )
 }
-//{new Date(pack.createdAt).toLocaleString('sv-SE', { hour12: false })}
 
 export default PackageDetails

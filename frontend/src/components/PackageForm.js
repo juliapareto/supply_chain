@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
-// import PackageDetails from './PackageDetails';
-import { usePackagesContext } from '../hooks/usePackagesContext';
+import { usePackagesContext } from '../hooks/usePackagesContext'
+import { useAuthContext } from '../hooks/useAuthContext';
 
 
 const PackageForm = () =>{
     const { dispatch } = usePackagesContext()
+    const { user } = useAuthContext()
+
     const [owner, setOwner] = useState('');
     const [content, setContent] = useState('');
     const [weight, setWeight] = useState('');
@@ -13,12 +15,17 @@ const PackageForm = () =>{
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        if (!user) {
+            setError('You must be logged in')
+            return
+        }
         const pack = {owner, content, weight}
         const response = await fetch('/api/packages', {
             method: 'POST',
             body: JSON.stringify(pack),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
             }
         })
         const json = await response.json()
