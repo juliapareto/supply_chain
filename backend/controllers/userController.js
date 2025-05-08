@@ -1,4 +1,10 @@
 const User = require('../models/userModel')
+const jwt = require('jsonwebtoken')
+
+const createToken = (_id) => {
+    return jwt.sign({_id}, process.env.JWT_SECRET, { expiresIn: '3d' })
+  }
+  
 // const mongoose = require('mongoose');
 
 // // GET all
@@ -26,9 +32,15 @@ const User = require('../models/userModel')
 // POST single
 const loginUser = async (req, res) => {
 
+    const {email, password} = req.body
+
     try{
-        // const package = await Package.create({content, owner, weight})
-        res.json({mssg: 'login'})
+        const user = await User.login(email, password)
+  
+        // create a token
+        const token = createToken(user._id)
+    
+        res.status(200).json({email, token})
     } catch (error) {
         res.status(400).json({error: error.message})
     }
@@ -37,16 +49,19 @@ const loginUser = async (req, res) => {
 
 // POST single
 const signupUser = async (req, res) => {
-    const { email, password} = req.body
-
-    try{
-        const user = await User.signup(email, password)
-        res.status(200).json({email, user})
+    const {email, password} = req.body
+  
+    try {
+      const user = await User.signup(email, password)
+  
+      // create a token
+      const token = createToken(user._id)
+  
+      res.status(200).json({email, token})
     } catch (error) {
-        res.status(400).json({error: error.message})
+      res.status(400).json({error: error.message})
     }
-
-}
+  }
 
 // // DELETE single
 // const deletePackage = async (req, res) => {

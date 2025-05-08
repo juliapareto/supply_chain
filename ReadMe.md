@@ -1,17 +1,25 @@
 Dependencies to download:
+
 a. Download NodeJS from: nodejs.org
 
+b. Download git from: https://git-scm.com/downloads
 
-How to run:
+First time:
+```
+git clone https://github.com/juliapareto/supply_chain.git
 
-1. In backend folder:
-    Create file called ".env" add port and MONG_URI
+cd backend
+npm install
 
+cd ../frontend
+npm install
+```
+In backend folder: Create file called ".env" add port and MONG_URI
 
-
-In you terminal:
-
-    cd to ./backend/
-    run: npm start
-    cd to ./frontend/
-    run: npm start
+To run:
+```
+cd ./backend/
+npm start
+cd ./frontend/
+npm start
+```
