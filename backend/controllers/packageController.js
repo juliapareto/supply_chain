@@ -3,24 +3,26 @@ const mongoose = require('mongoose');
 
 // GET all
 const getPackages = async (req, res) => {
-    const packages = await Package.find({}).sort({createdAt: -1})
-    res.status(200).json(packages)
+  const user_id = req.user._id
+
+  const packages = await Package.find({ user_id }).sort({createdAt: -1})
+  res.status(200).json(packages)
 }
 
 // GET single
 const getPackage = async (req, res) => {
-    const { id } = req.params
+  const { id } = req.params
 
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({ error: 'No such package' });
-    }
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(404).json({ error: 'No such package' });
+  }
 
-    const package = await Package.findById(id)
+  const package = await Package.findById(id)
 
-    if (!package) {
-        return res.status(404).json({error: 'No such package'})
-    }
-    res.status(200).json(package)
+  if (!package) {
+      return res.status(404).json({error: 'No such package'})
+  }
+  res.status(200).json(package)
 }
 
 // POST single
@@ -43,7 +45,8 @@ const createPackage = async (req, res) => {
     }
 
     try{
-        const package = await Package.create({content, owner, weight})
+        const user_id = req.user._id
+        const package = await Package.create({content, owner, weight, user_id})
         res.status(200).json(package)
     } catch (error) {
         res.status(400).json({error: error.message})
