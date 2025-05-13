@@ -31,14 +31,17 @@ const PackageDetails = ({ pack }) => {
     return (
         <div className="package-details">
             <h4>{pack.owner}</h4>
-            {!isDetailPage && (
-                <Link to={`/packages/${pack._id}`}>View Details</Link>
-            )}
             <p>- <strong>Content: </strong>{pack.content}</p>
             <p>- <strong>Weight: </strong>{pack.weight}</p>
             <p title={format(new Date(pack.createdAt), 'yyyy-MM-dd HH:mm:ss')}>
                 - <strong>Tracking since: </strong>{formatDistanceToNow(new Date(pack.createdAt), {addSuffix: true})}
             </p>
+            <p>🌡️ <italic>latest data</italic></p>
+            <p>💧 <italic>latest data</italic></p>
+            
+            {!isDetailPage && (
+                <Link to={`/packages/${pack._id}`}>View Details</Link>
+            )}
             <span className="material-symbols-outlined" onClick = {handleClick}> delete </span>
         </div>
     )

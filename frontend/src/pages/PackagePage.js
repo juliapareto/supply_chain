@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAuthContext } from '../hooks/useAuthContext'
 import PackageDetails from '../components/PackageDetails'
+import PackageData from '../components/PackageData'
 
 const PackagePage = () => {
   const { id } = useParams();
@@ -36,6 +37,7 @@ const PackagePage = () => {
   return (
     <div className="packages">
         <PackageDetails key = {pack._id} pack = {pack}/>
+        <PackageData key = {pack._id} pack = {pack}/>
     </div>
   );
 };
