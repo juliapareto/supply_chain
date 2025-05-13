@@ -1,13 +1,15 @@
 import { usePackagesContext } from "../hooks/usePackagesContext"
 import { useAuthContext } from "../hooks/useAuthContext"
 import { formatDistanceToNow, format } from 'date-fns'
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 
 const PackageDetails = ({ pack }) => {
 
     const { dispatch } = usePackagesContext()
     const { user } = useAuthContext()
+    const location = useLocation()
+    const isDetailPage = location.pathname === `/packages/${pack._id}`
 
     const handleClick = async () => {
         if (!user){
@@ -29,7 +31,9 @@ const PackageDetails = ({ pack }) => {
     return (
         <div className="package-details">
             <h4>{pack.owner}</h4>
-            <Link to={`/packages/${pack._id}`}>View Details</Link>
+            {!isDetailPage && (
+                <Link to={`/packages/${pack._id}`}>View Details</Link>
+            )}
             <p>- <strong>Content: </strong>{pack.content}</p>
             <p>- <strong>Weight: </strong>{pack.weight}</p>
             <p title={format(new Date(pack.createdAt), 'yyyy-MM-dd HH:mm:ss')}>

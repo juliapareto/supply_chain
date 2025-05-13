@@ -28,7 +28,7 @@ const PackagePage = () => {
     };
 
     fetchPackage();
-  }, [id]);
+  }, [id, user]);
 
   if (error) return <div>Error: {error}</div>;
   if (!pack) return <div>Loading...</div>;
