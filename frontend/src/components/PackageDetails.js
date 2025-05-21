@@ -36,8 +36,8 @@ const PackageDetails = ({ pack }) => {
     //add channel ID
     return (
         <div className="package-details">
-            <h4>{pack.owner}</h4>
-            <p>- <strong>Content: </strong>{pack.content}</p>
+            <h4>{pack.description}</h4>
+            <p>- <strong>ID: </strong>{pack.ID}</p>
             <p>- <strong>Weight: </strong>{pack.weight}</p>
             
             <p title={format(new Date(pack.createdAt), 'yyyy-MM-dd HH:mm:ss')}>

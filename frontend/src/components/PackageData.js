@@ -5,32 +5,56 @@ import {
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 
-const SensorData = () => {
+const SensorData = ({ packID }) => {
   const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (!packID) return;
+
     const fetchSensorData = async () => {
-      const res = await fetch('https://api.thingspeak.com/channels/2864984/feeds.json?results=100');
-      const json = await res.json();
-      const formatted = json.feeds
-        .filter(f => f.field1 && f.field2 && f.field3 && f.field4 && f.field5 && f.field6)
-        .map(feed => ({
-          time: new Date(feed.created_at).toLocaleTimeString(),
-          temperature: parseFloat(feed.field1),
-          humidity: parseFloat(feed.field2),
-          light: parseFloat(feed.field3),
-          flame: parseFloat(feed.field4),
-          lat: parseFloat(feed.field5),
-          lng: parseFloat(feed.field6)
-        }));
-      setData(formatted);
+      try {
+        const res = await fetch(`https://api.thingspeak.com/channels/${packID}/feeds.json?results=100`);
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}, check package ID.`);
+        }
+        const json = await res.json();
+
+        if (!json.feeds || !Array.isArray(json.feeds) || json.feeds.length === 0) {
+          throw new Error('No data received from ThingSpeak.');
+        }
+
+        const formatted = json.feeds
+          .filter(f => f.field1 && f.field2 && f.field3 && f.field4 && f.field5 && f.field6)
+          .map(feed => ({
+            time: new Date(feed.created_at).toLocaleTimeString(),
+            temperature: parseFloat(feed.field1),
+            humidity: parseFloat(feed.field2),
+            light: parseFloat(feed.field3),
+            flame: parseFloat(feed.field4),
+            lat: parseFloat(feed.field5),
+            lng: parseFloat(feed.field6)
+          }));
+
+        if (formatted.length === 0) {
+          throw new Error('Sensor data could not be parsed or is incomplete.');
+        }
+
+        setData(formatted);
+        setError(null);
+      } catch (err) {
+        setError(err.message);
+        setData([]);
+        console.error("Sensor fetch error:", err);
+      }
     };
 
     fetchSensorData();
     const interval = setInterval(fetchSensorData, 10000);
     return () => clearInterval(interval);
-  }, []);
+  }, [packID]);
 
+  if (error) return <p style={{ color: 'red' }}>❌ {error}</p>;
   if (!data.length) return <p>Loading sensor data...</p>;
 
   const latest = data[data.length - 1];
@@ -89,7 +113,11 @@ const SensorData = () => {
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
           attribution='&copy; OpenStreetMap contributors'
         />
-        <Marker position={[latest.lat, latest.lng]} icon={L.icon({ iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png', iconSize: [25, 41], iconAnchor: [12, 41] })}>
+        <Marker position={[latest.lat, latest.lng]} icon={L.icon({
+          iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
+          iconSize: [25, 41],
+          iconAnchor: [12, 41]
+        })}>
           <Popup>
             Latitude: {latest.lat}<br />
             Longitude: {latest.lng}
