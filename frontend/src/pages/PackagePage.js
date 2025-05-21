@@ -36,8 +36,8 @@ const PackagePage = () => {
 
   return (
     <div className="packages">
-        <PackageDetails key = {pack._id} pack = {pack}/>
-        <PackageData key = {pack._id} pack = {pack}/>
+        <PackageDetails pack = {pack}/>
+        <PackageData pack = {pack}/>
     </div>
   );
 };

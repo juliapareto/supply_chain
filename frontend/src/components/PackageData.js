@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { useAuthContext } from '../hooks/useAuthContext';
+
 import {
   LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
 } from 'recharts';
@@ -7,11 +9,20 @@ import L from 'leaflet';
 
 const SensorData = () => {
   const [data, setData] = useState([]);
+  const {user} = useAuthContext()
 
   useEffect(() => {
     const fetchSensorData = async () => {
-      const res = await fetch('https://api.thingspeak.com/channels/2864984/feeds.json?results=100');
+  //       if (user) {
+  //   console.log("User channelID:", user.channelID);
+  // }
+      const res = await fetch(`https://api.thingspeak.com/channels/${user.channelID}/feeds.json?results=100`);
       const json = await res.json();
+
+      if (!Array.isArray(json.feeds)) {
+        console.warn("Unexpected response from ThingSpeak:", json);
+        return;
+      }
       const formatted = json.feeds
         .filter(f => f.field1 && f.field2 && f.field3 && f.field4 && f.field5 && f.field6)
         .map(feed => ({
@@ -29,7 +40,7 @@ const SensorData = () => {
     fetchSensorData();
     const interval = setInterval(fetchSensorData, 10000);
     return () => clearInterval(interval);
-  }, []);
+  }, [user]);
 
   if (!data.length) return <p>Loading sensor data...</p>;
 
