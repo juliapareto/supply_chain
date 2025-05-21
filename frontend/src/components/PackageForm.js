@@ -7,8 +7,8 @@ const PackageForm = () =>{
     const { dispatch } = usePackagesContext()
     const { user } = useAuthContext()
 
-    const [owner, setOwner] = useState('');
-    const [content, setContent] = useState('');
+    const [ID, setID] = useState('');
+    const [description, setDescription] = useState('');
     const [weight, setWeight] = useState('');
     const [error, setError] = useState(null);
     const [emptyFields, setEmptyFields] = useState([]);
@@ -19,7 +19,7 @@ const PackageForm = () =>{
             setError('You must be logged in')
             return
         }
-        const pack = {owner, content, weight}
+        const pack = {ID, description, weight}
         const response = await fetch('/api/packages', {
             method: 'POST',
             body: JSON.stringify(pack),
@@ -35,8 +35,8 @@ const PackageForm = () =>{
             setEmptyFields(json.emptyFields)
         }
         if (response.ok) {
-            setOwner('')
-            setContent('')
+            setID('')
+            setDescription('')
             setWeight('')
             setError(null)
             setEmptyFields([])
@@ -49,20 +49,21 @@ const PackageForm = () =>{
         <form className='create' onSubmit={handleSubmit}>
             <h3>Add a new package</h3>
             
-            <label>Package owner</label>
+            <label>Package ID</label>
             <input
                 type="text"
-                onChange={(e) => setOwner(e.target.value)}
-                value={owner}
-                className={emptyFields.includes('owner') ? 'error' : ''}
+                onChange={(e) => setID(e.target.value)}
+                placeholder="ID has to match the channel ID"
+                value={ID}
+                className={emptyFields.includes('ID') ? 'error' : ''}
             />
 
-            <label>Package content</label>
+            <label>Package description</label>
             <input
                 type="text"
-                onChange={(e) => setContent(e.target.value)}
-                value={content}
-                className={emptyFields.includes('content') ? 'error' : ''}
+                onChange={(e) => setDescription(e.target.value)}
+                value={description}
+                className={emptyFields.includes('description') ? 'error' : ''}
             />
 
             <label>Package weight</label>

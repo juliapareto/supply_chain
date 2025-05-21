@@ -27,15 +27,15 @@ const getPackage = async (req, res) => {
 
 // POST single
 const createPackage = async (req, res) => {
-    const {content, owner, weight} = req.body
+    const {ID, description, weight} = req.body
 
     let emptyFields = []
 
-    if (!content) {
-      emptyFields.push('content')
+    if (!ID) {
+      emptyFields.push('ID')
     }
-    if (!owner) {
-      emptyFields.push('owner')
+    if (!description) {
+      emptyFields.push('description')
     }
     if (!weight) {
       emptyFields.push('weight')
@@ -46,7 +46,7 @@ const createPackage = async (req, res) => {
 
     try{
         const user_id = req.user._id
-        const package = await Package.create({content, owner, weight, user_id})
+        const package = await Package.create({ID, description, weight, user_id})
         res.status(200).json(package)
     } catch (error) {
         res.status(400).json({error: error.message})
