@@ -41,8 +41,17 @@ const PackageDetails = ({ pack }) => {
             <p>- <strong>Weight: </strong>{pack.weight}</p>
             
             <p title={format(new Date(pack.createdAt), 'yyyy-MM-dd HH:mm:ss')}>
-                - <strong>Tracking since: </strong>{formatDistanceToNow(new Date(pack.createdAt), {addSuffix: true})}
+                - <strong>Tracking since: </strong>
+                {formatDistanceToNow(new Date(pack.createdAt), {addSuffix: true})}
             </p>
+
+        {sensor&&sensor.time&&(
+            <p title={format(new Date(sensor.time), 'yyyy-MM-dd HH:mm:ss')}>
+                - <strong>Lastest data: </strong>
+                {formatDistanceToNow(new Date(sensor.time),{addSuffix: true})}
+                <br />
+            </p>
+        )}
 
             <p>
                 🌡️ <em>
