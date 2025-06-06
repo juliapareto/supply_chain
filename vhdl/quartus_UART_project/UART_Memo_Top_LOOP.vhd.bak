@@ -1,0 +1,66 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity UART_Memo_Top_LOOP is
+    port (
+        i_Clk       : in  std_logic;
+        i_RX_Serial : in  std_logic;
+        o_TX_Serial : out std_logic
+    );
+end UART_Memo_Top_LOOP;
+
+architecture Structural of UART_Memo_Top_LOOP is
+
+    signal s_RX_DV      : std_logic;
+    signal s_RX_Byte    : std_logic_vector(7 downto 0);
+
+    signal s_TX_DV      : std_logic;
+    signal s_TX_Byte    : std_logic_vector(7 downto 0);
+    signal s_TX_Done    : std_logic;
+    signal s_TX_Active  : std_logic;
+
+begin
+
+    -- UART Receiver
+    UART_RX_inst : entity work.UART_RX
+        generic map (
+            g_CLKS_PER_BIT => 5208
+        )
+        port map (
+            i_Clk       => i_Clk,
+            i_RX_Serial => i_RX_Serial,
+            o_RX_DV     => s_RX_DV,
+            o_RX_Byte   => s_RX_Byte
+        );
+
+    -- Memory Controller
+    Memo_Control_inst : entity work.Memo_Control
+        generic map (
+            g_NUM_BYTES => 1
+        )
+        port map (
+            i_Clk        => i_Clk,
+            i_RX_DV      => s_RX_DV,
+            i_RX_Byte    => s_RX_Byte,
+            i_TX_Done    => s_TX_Done,
+            i_TX_Active  => s_TX_Active,
+            o_TX_DV      => s_TX_DV,
+            o_TX_Byte    => s_TX_Byte
+        );
+
+    -- UART Transmitter
+    UART_TX_inst : entity work.UART_TX
+        generic map (
+            g_CLKS_PER_BIT => 5208
+        )
+        port map (
+            i_Clk       => i_Clk,
+            i_TX_DV     => s_TX_DV,
+            i_TX_Byte   => s_TX_Byte,
+            o_TX_Active => s_TX_Active,
+            o_TX_Serial => o_TX_Serial,
+            o_TX_Done   => s_TX_Done
+        );
+
+end Structural;

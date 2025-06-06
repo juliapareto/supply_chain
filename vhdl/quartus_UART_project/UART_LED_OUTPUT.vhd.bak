@@ -1,0 +1,43 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity UART_LED_OUTPUT is
+    generic (
+        g_NUM_BYTES : integer := 8
+    );
+    port (
+        i_Clk        : in std_logic;
+        o_LED_0       : in std_logic;
+		  o_LED_1       : in std_logic;
+		  o_LED_2       : in std_logic;
+		  o_LED_3       : in std_logic;
+		  o_LED_4       : in std_logic;
+		  o_LED_5       : in std_logic;
+		  o_LED_6       : in std_logic;
+		  o_LED_7       : in std_logic;
+        
+        i_RX_DV      : out std_logic;
+        i_RX_Byte_LED    : out std_logic_vector(7 downto 0)
+    );
+end UART_LED_OUTPUT;
+
+architecture Behavioral of UART_LED_OUTPUT is
+
+
+
+begin
+
+
+	o_LED_0 <= i_RX_Byte_LED(0);
+	o_LED_1 <= i_RX_Byte_LED(1);
+	o_LED_2 <= i_RX_Byte_LED(2);
+	o_LED_3 <= i_RX_Byte_LED(3);
+	o_LED_4 <= i_RX_Byte_LED(4);
+	o_LED_5 <= i_RX_Byte_LED(5);
+	o_LED_6 <= i_RX_Byte_LED(6);
+	o_LED_7 <= i_RX_Byte_LED(7);
+    
+
+
+end Behavioral;

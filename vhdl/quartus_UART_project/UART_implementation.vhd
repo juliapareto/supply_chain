@@ -1,0 +1,62 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity UART_implementation is
+    port (
+        i_Clk       : in std_logic;                      -- Main clock
+        --i_RX_Serial : in std_logic;                      -- UART RX serial input
+        --o_TX_Serial : out std_logic;                     -- UART TX serial output
+		  o_TX_Active : out std_logic;							-- TX active signal
+        i_TX_DV     : in std_logic;                      -- Data valid signal for transmission
+        i_TX_Byte   : in std_logic_vector(10 downto 0);   -- Byte to transmit
+        o_RX_DV     : out std_logic;                     -- Data valid signal for received data
+        o_RX_Byte   : out std_logic_vector(10 downto 0);  -- Received byte
+        o_TX_Done   : out std_logic                      -- Transmission complete signal
+    );
+end UART_implementation;
+
+architecture RTL of UART_implementation is
+
+    -- Internal signals
+    signal w_RX_DV     : std_logic;
+    signal w_RX_Byte   : std_logic_vector(10 downto 0);
+    signal w_TX_Done   : std_logic;
+    signal w_TX_Active : std_logic;
+	 signal serial		  : std_logic;
+
+begin
+
+    -- UART Receiver Instance
+    UART_RX_inst : entity work.UART_RX
+        generic map (
+            g_CLKS_PER_BIT => 115
+        )
+        port map (
+            i_Clk       => i_Clk,
+            i_RX_Serial => serial,
+            o_RX_DV     => w_RX_DV,
+            o_RX_Byte   => w_RX_Byte
+        );
+
+    -- UART Transmitter Instance
+    UART_TX_inst : entity work.UART_TX
+        generic map (
+            g_CLKS_PER_BIT => 115
+        )
+        port map (
+            i_Clk       => i_Clk,
+            i_TX_DV     => i_TX_DV,
+            i_TX_Byte   => i_TX_Byte,
+            o_TX_Active => w_TX_Active,
+            o_TX_Serial => serial,
+            o_TX_Done   => w_TX_Done
+        );
+
+    -- Connect internal signals to top-level outputs
+    o_RX_DV    <= w_RX_DV;
+    o_RX_Byte  <= w_RX_Byte;
+    o_TX_Done  <= w_TX_Done;
+	 o_TX_Active  <= w_TX_Active;
+
+end RTL;

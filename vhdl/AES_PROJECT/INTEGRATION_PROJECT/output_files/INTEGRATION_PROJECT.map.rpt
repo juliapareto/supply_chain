@@ -1,0 +1,491 @@
+Analysis & Synthesis report for INTEGRATION_PROJECT
+Fri Jun  6 13:56:51 2025
+Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: reg:reg_inst
+ 11. Parameter Settings for User Entity Instance: controller:controller_inst|reg:reg_inst
+ 12. Parameter Settings for User Entity Instance: key_schedule:key_schedule_inst|reg:reg_inst
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Jun  6 13:56:51 2025           ;
+; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
+; Revision Name                      ; INTEGRATION_PROJECT                             ;
+; Top-level Entity Name              ; aes_enc                                         ;
+; Family                             ; MAX 10                                          ;
+; Total logic elements               ; 4,771                                           ;
+;     Total combinational functions  ; 4,771                                           ;
+;     Dedicated logic registers      ; 264                                             ;
+; Total registers                    ; 264                                             ;
+; Total pins                         ; 387                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
+; UFM blocks                         ; 0                                               ;
+; ADC blocks                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                               ;
++------------------------------------------------------------------+--------------------+---------------------+
+; Option                                                           ; Setting            ; Default Value       ;
++------------------------------------------------------------------+--------------------+---------------------+
+; Device                                                           ; 10M50DAF484C6GES   ;                     ;
+; Top-level entity name                                            ; aes_enc            ; INTEGRATION_PROJECT ;
+; Family name                                                      ; MAX 10             ; Cyclone V           ;
+; Use smart compilation                                            ; Off                ; Off                 ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                  ;
+; Enable compact report table                                      ; Off                ; Off                 ;
+; Restructure Multiplexers                                         ; Auto               ; Auto                ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                 ;
+; Preserve fewer node names                                        ; On                 ; On                  ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable              ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001        ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993           ;
+; State Machine Processing                                         ; Auto               ; Auto                ;
+; Safe State Machine                                               ; Off                ; Off                 ;
+; Extract Verilog State Machines                                   ; On                 ; On                  ;
+; Extract VHDL State Machines                                      ; On                 ; On                  ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                 ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000                ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                 ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                  ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                  ;
+; Parallel Synthesis                                               ; On                 ; On                  ;
+; DSP Block Balancing                                              ; Auto               ; Auto                ;
+; NOT Gate Push-Back                                               ; On                 ; On                  ;
+; Power-Up Don't Care                                              ; On                 ; On                  ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                 ;
+; Remove Duplicate Registers                                       ; On                 ; On                  ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                 ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                 ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                 ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                 ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                 ;
+; Ignore SOFT Buffers                                              ; On                 ; On                  ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                 ;
+; Optimization Technique                                           ; Balanced           ; Balanced            ;
+; Carry Chain Length                                               ; 70                 ; 70                  ;
+; Auto Carry Chains                                                ; On                 ; On                  ;
+; Auto Open-Drain Pins                                             ; On                 ; On                  ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                 ;
+; Auto ROM Replacement                                             ; On                 ; On                  ;
+; Auto RAM Replacement                                             ; On                 ; On                  ;
+; Auto DSP Block Replacement                                       ; On                 ; On                  ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto                ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto                ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                  ;
+; Strict RAM Replacement                                           ; Off                ; Off                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                  ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                 ;
+; Auto RAM Block Balancing                                         ; On                 ; On                  ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                 ;
+; Auto Resource Sharing                                            ; Off                ; Off                 ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                 ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                 ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                 ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                  ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                 ;
+; Timing-Driven Synthesis                                          ; On                 ; On                  ;
+; Report Parameter Settings                                        ; On                 ; On                  ;
+; Report Source Assignments                                        ; On                 ; On                  ;
+; Report Connectivity Checks                                       ; On                 ; On                  ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                 ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                   ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation  ;
+; HDL message level                                                ; Level2             ; Level2              ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                 ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000                ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000                ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                 ;
+; Clock MUX Protection                                             ; On                 ; On                  ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                 ;
+; Block Design Naming                                              ; Auto               ; Auto                ;
+; SDC constraint protection                                        ; Off                ; Off                 ;
+; Synthesis Effort                                                 ; Auto               ; Auto                ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                  ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium              ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto                ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                  ;
++------------------------------------------------------------------+--------------------+---------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                              ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                                                                                                       ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; sub_byte.vhd                     ; yes             ; User VHDL File  ; C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sub_byte.vhd               ;         ;
+; shift_rwos.vhd                   ; yes             ; User VHDL File  ; C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/shift_rwos.vhd             ;         ;
+; sbox.vhd                         ; yes             ; User VHDL File  ; C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd                   ;         ;
+; reg.vhd                          ; yes             ; User VHDL File  ; C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/reg.vhd                    ;         ;
+; mix_columns.vhd                  ; yes             ; User VHDL File  ; C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/mix_columns.vhd            ;         ;
+; key_schedule.vhd                 ; yes             ; User VHDL File  ; C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/key_schedule.vhd           ;         ;
+; key_sch_round_function.vhd       ; yes             ; User VHDL File  ; C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/key_sch_round_function.vhd ;         ;
+; gfmult_by2.vhd                   ; yes             ; User VHDL File  ; C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/gfmult_by2.vhd             ;         ;
+; controller.vhd                   ; yes             ; User VHDL File  ; C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/controller.vhd             ;         ;
+; column_calculator.vhd            ; yes             ; User VHDL File  ; C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/column_calculator.vhd      ;         ;
+; aes_enc.vhd                      ; yes             ; User VHDL File  ; C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/aes_enc.vhd                ;         ;
+; add_round_key.vhd                ; yes             ; User VHDL File  ; C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/add_round_key.vhd          ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 4,771     ;
+;                                             ;           ;
+; Total combinational functions               ; 4771      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 4483      ;
+;     -- 3 input functions                    ; 143       ;
+;     -- <=2 input functions                  ; 145       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 4771      ;
+;     -- arithmetic mode                      ; 0         ;
+;                                             ;           ;
+; Total registers                             ; 264       ;
+;     -- Dedicated logic registers            ; 264       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 387       ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; rst~input ;
+; Maximum fan-out                             ; 272       ;
+; Total fan-out                               ; 20018     ;
+; Average fan-out                             ; 3.45      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                ;
++------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node                                 ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                      ; Entity Name            ; Library Name ;
++------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
+; |aes_enc                                                   ; 4771 (152)          ; 264 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 387  ; 0            ; 0          ; |aes_enc                                                                                                                 ; aes_enc                ; work         ;
+;    |add_round_key:add_round_key_inst|                      ; 128 (128)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|add_round_key:add_round_key_inst                                                                                ; add_round_key          ; work         ;
+;    |controller:controller_inst|                            ; 13 (10)             ; 8 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|controller:controller_inst                                                                                      ; controller             ; work         ;
+;       |gfmult_by2:gfmult_by2_inst|                         ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|controller:controller_inst|gfmult_by2:gfmult_by2_inst                                                           ; gfmult_by2             ; work         ;
+;       |reg:reg_inst|                                       ; 0 (0)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|controller:controller_inst|reg:reg_inst                                                                         ; reg                    ; work         ;
+;    |key_schedule:key_schedule_inst|                        ; 1000 (104)          ; 128 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|key_schedule:key_schedule_inst                                                                                  ; key_schedule           ; work         ;
+;       |key_sch_round_function:key_sch_round_function_inst| ; 896 (64)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|key_schedule:key_schedule_inst|key_sch_round_function:key_sch_round_function_inst                               ; key_sch_round_function ; work         ;
+;          |sbox:\gen_sboxes:12:sbox_inst|                   ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|key_schedule:key_schedule_inst|key_sch_round_function:key_sch_round_function_inst|sbox:\gen_sboxes:12:sbox_inst ; sbox                   ; work         ;
+;          |sbox:\gen_sboxes:13:sbox_inst|                   ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|key_schedule:key_schedule_inst|key_sch_round_function:key_sch_round_function_inst|sbox:\gen_sboxes:13:sbox_inst ; sbox                   ; work         ;
+;          |sbox:\gen_sboxes:14:sbox_inst|                   ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|key_schedule:key_schedule_inst|key_sch_round_function:key_sch_round_function_inst|sbox:\gen_sboxes:14:sbox_inst ; sbox                   ; work         ;
+;          |sbox:\gen_sboxes:15:sbox_inst|                   ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|key_schedule:key_schedule_inst|key_sch_round_function:key_sch_round_function_inst|sbox:\gen_sboxes:15:sbox_inst ; sbox                   ; work         ;
+;       |reg:reg_inst|                                       ; 0 (0)               ; 128 (128)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|key_schedule:key_schedule_inst|reg:reg_inst                                                                     ; reg                    ; work         ;
+;    |mix_columns:mix_columns_inst|                          ; 150 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|mix_columns:mix_columns_inst                                                                                    ; mix_columns            ; work         ;
+;       |column_calculator:mix_columns_inst0|                ; 39 (39)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|mix_columns:mix_columns_inst|column_calculator:mix_columns_inst0                                                ; column_calculator      ; work         ;
+;       |column_calculator:mix_columns_inst1|                ; 39 (39)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|mix_columns:mix_columns_inst|column_calculator:mix_columns_inst1                                                ; column_calculator      ; work         ;
+;       |column_calculator:mix_columns_inst2|                ; 32 (32)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|mix_columns:mix_columns_inst|column_calculator:mix_columns_inst2                                                ; column_calculator      ; work         ;
+;       |column_calculator:mix_columns_inst3|                ; 40 (40)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|mix_columns:mix_columns_inst|column_calculator:mix_columns_inst3                                                ; column_calculator      ; work         ;
+;    |reg:reg_inst|                                          ; 0 (0)               ; 128 (128)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|reg:reg_inst                                                                                                    ; reg                    ; work         ;
+;    |sub_byte:sub_byte_inst|                                ; 3328 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|sub_byte:sub_byte_inst                                                                                          ; sub_byte               ; work         ;
+;       |sbox:\gen:0:sbox_inst|                              ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|sub_byte:sub_byte_inst|sbox:\gen:0:sbox_inst                                                                    ; sbox                   ; work         ;
+;       |sbox:\gen:10:sbox_inst|                             ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|sub_byte:sub_byte_inst|sbox:\gen:10:sbox_inst                                                                   ; sbox                   ; work         ;
+;       |sbox:\gen:11:sbox_inst|                             ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|sub_byte:sub_byte_inst|sbox:\gen:11:sbox_inst                                                                   ; sbox                   ; work         ;
+;       |sbox:\gen:12:sbox_inst|                             ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|sub_byte:sub_byte_inst|sbox:\gen:12:sbox_inst                                                                   ; sbox                   ; work         ;
+;       |sbox:\gen:13:sbox_inst|                             ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|sub_byte:sub_byte_inst|sbox:\gen:13:sbox_inst                                                                   ; sbox                   ; work         ;
+;       |sbox:\gen:14:sbox_inst|                             ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|sub_byte:sub_byte_inst|sbox:\gen:14:sbox_inst                                                                   ; sbox                   ; work         ;
+;       |sbox:\gen:15:sbox_inst|                             ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|sub_byte:sub_byte_inst|sbox:\gen:15:sbox_inst                                                                   ; sbox                   ; work         ;
+;       |sbox:\gen:1:sbox_inst|                              ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|sub_byte:sub_byte_inst|sbox:\gen:1:sbox_inst                                                                    ; sbox                   ; work         ;
+;       |sbox:\gen:2:sbox_inst|                              ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|sub_byte:sub_byte_inst|sbox:\gen:2:sbox_inst                                                                    ; sbox                   ; work         ;
+;       |sbox:\gen:3:sbox_inst|                              ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|sub_byte:sub_byte_inst|sbox:\gen:3:sbox_inst                                                                    ; sbox                   ; work         ;
+;       |sbox:\gen:4:sbox_inst|                              ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|sub_byte:sub_byte_inst|sbox:\gen:4:sbox_inst                                                                    ; sbox                   ; work         ;
+;       |sbox:\gen:5:sbox_inst|                              ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|sub_byte:sub_byte_inst|sbox:\gen:5:sbox_inst                                                                    ; sbox                   ; work         ;
+;       |sbox:\gen:6:sbox_inst|                              ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|sub_byte:sub_byte_inst|sbox:\gen:6:sbox_inst                                                                    ; sbox                   ; work         ;
+;       |sbox:\gen:7:sbox_inst|                              ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|sub_byte:sub_byte_inst|sbox:\gen:7:sbox_inst                                                                    ; sbox                   ; work         ;
+;       |sbox:\gen:8:sbox_inst|                              ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|sub_byte:sub_byte_inst|sbox:\gen:8:sbox_inst                                                                    ; sbox                   ; work         ;
+;       |sbox:\gen:9:sbox_inst|                              ; 208 (208)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |aes_enc|sub_byte:sub_byte_inst|sbox:\gen:9:sbox_inst                                                                    ; sbox                   ; work         ;
++------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+--------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 264   ;
+; Number of registers using Synchronous Clear  ; 3     ;
+; Number of registers using Synchronous Load   ; 160   ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; 3:1                ; 128 bits  ; 256 LEs       ; 256 LEs              ; 0 LEs                  ; Yes        ; |aes_enc|reg:reg_inst|current_stata[1] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg:reg_inst ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; size           ; 128   ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controller:controller_inst|reg:reg_inst ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; size           ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: key_schedule:key_schedule_inst|reg:reg_inst ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; size           ; 128   ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 387                         ;
+; cycloneiii_ff         ; 264                         ;
+;     SCLR              ; 3                           ;
+;     SLD               ; 160                         ;
+;     plain             ; 101                         ;
+; cycloneiii_lcell_comb ; 4771                        ;
+;     normal            ; 4771                        ;
+;         2 data inputs ; 145                         ;
+;         3 data inputs ; 143                         ;
+;         4 data inputs ; 4483                        ;
+;                       ;                             ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 6.81                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:28     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+    Info: Processing started: Fri Jun  6 13:56:15 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off INTEGRATION_PROJECT -c INTEGRATION_PROJECT
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file inv_reg.vhd
+    Info (12022): Found design unit 1: inv_reg-behavioral File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_reg.vhd Line: 29
+    Info (12023): Found entity 1: inv_reg File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_reg.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file inv_key_schedule.vhd
+    Info (12022): Found design unit 1: inv_key_schedule-behavioral File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_key_schedule.vhd Line: 30
+    Info (12023): Found entity 1: inv_key_schedule File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_key_schedule.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file inv_controller.vhd
+    Info (12022): Found design unit 1: inv_controller-behavioral File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_controller.vhd Line: 31
+    Info (12023): Found entity 1: inv_controller File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_controller.vhd Line: 21
+Info (12021): Found 2 design units, including 1 entities, in source file inv_add_round_key.vhd
+    Info (12022): Found design unit 1: inv_add_round_key-rtl File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_add_round_key.vhd Line: 28
+    Info (12023): Found entity 1: inv_add_round_key File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_add_round_key.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file dec_tb.vhd
+    Info (12022): Found design unit 1: test_dec-behavior File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/dec_tb.vhd Line: 23
+    Info (12023): Found entity 1: test_dec File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/dec_tb.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file inv_sub_byte.vhd
+    Info (12022): Found design unit 1: inv_sub_byte-behavioral File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_sub_byte.vhd Line: 27
+    Info (12023): Found entity 1: inv_sub_byte File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_sub_byte.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file inv_shift_rwos.vhd
+    Info (12022): Found design unit 1: inv_shift_rows-rtl File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_shift_rwos.vhd Line: 27
+    Info (12023): Found entity 1: inv_shift_rows File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_shift_rwos.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file inv_sbox.vhd
+    Info (12022): Found design unit 1: inv_sbox-behavioral File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_sbox.vhd Line: 27
+    Info (12023): Found entity 1: inv_sbox File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_sbox.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file inv_mix_columns.vhd
+    Info (12022): Found design unit 1: inv_mix_columns-rtl File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_mix_columns.vhd Line: 27
+    Info (12023): Found entity 1: inv_mix_columns File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_mix_columns.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file inv_key_sch_round_function.vhd
+    Info (12022): Found design unit 1: inv_ksch_round_func-behavioral File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_key_sch_round_function.vhd Line: 28
+    Info (12023): Found entity 1: inv_ksch_round_func File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_key_sch_round_function.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file inv_column_calculator.vhd
+    Info (12022): Found design unit 1: inv_column_calculator-rtl File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_column_calculator.vhd Line: 27
+    Info (12023): Found entity 1: inv_column_calculator File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/inv_column_calculator.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file aes_dec.vhd
+    Info (12022): Found design unit 1: aes_dec-rtl File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/aes_dec.vhd Line: 31
+    Info (12023): Found entity 1: aes_dec File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/aes_dec.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file sub_byte.vhd
+    Info (12022): Found design unit 1: sub_byte-behavioral File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sub_byte.vhd Line: 27
+    Info (12023): Found entity 1: sub_byte File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sub_byte.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file shift_rwos.vhd
+    Info (12022): Found design unit 1: shift_rows-rtl File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/shift_rwos.vhd Line: 27
+    Info (12023): Found entity 1: shift_rows File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/shift_rwos.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file sbox.vhd
+    Info (12022): Found design unit 1: sbox-behavioral File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 27
+    Info (12023): Found entity 1: sbox File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file reg.vhd
+    Info (12022): Found design unit 1: reg-behavioral File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/reg.vhd Line: 29
+    Info (12023): Found entity 1: reg File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/reg.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file mix_columns.vhd
+    Info (12022): Found design unit 1: mix_columns-rtl File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/mix_columns.vhd Line: 27
+    Info (12023): Found entity 1: mix_columns File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/mix_columns.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file key_schedule.vhd
+    Info (12022): Found design unit 1: key_schedule-behavioral File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/key_schedule.vhd Line: 30
+    Info (12023): Found entity 1: key_schedule File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/key_schedule.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file key_sch_round_function.vhd
+    Info (12022): Found design unit 1: key_sch_round_function-behavioral File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/key_sch_round_function.vhd Line: 28
+    Info (12023): Found entity 1: key_sch_round_function File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/key_sch_round_function.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file gfmult_by2.vhd
+    Info (12022): Found design unit 1: gfmult_by2-behavioral File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/gfmult_by2.vhd Line: 27
+    Info (12023): Found entity 1: gfmult_by2 File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/gfmult_by2.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file enc_tb.vhd
+    Info (12022): Found design unit 1: test_enc-behavior File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/enc_tb.vhd Line: 23
+    Info (12023): Found entity 1: test_enc File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/enc_tb.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file controller.vhd
+    Info (12022): Found design unit 1: controller-behavioral File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/controller.vhd Line: 30
+    Info (12023): Found entity 1: controller File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/controller.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file column_calculator.vhd
+    Info (12022): Found design unit 1: column_calculator-rtl File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/column_calculator.vhd Line: 27
+    Info (12023): Found entity 1: column_calculator File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/column_calculator.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file aes_enc.vhd
+    Info (12022): Found design unit 1: aes_enc-behavioral File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/aes_enc.vhd Line: 31
+    Info (12023): Found entity 1: aes_enc File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/aes_enc.vhd Line: 20
+Info (12021): Found 2 design units, including 1 entities, in source file add_round_key.vhd
+    Info (12022): Found design unit 1: add_round_key-rtl File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/add_round_key.vhd Line: 29
+    Info (12023): Found entity 1: add_round_key File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/add_round_key.vhd Line: 21
+Info (12127): Elaborating entity "aes_enc" for the top level hierarchy
+Info (12128): Elaborating entity "reg" for hierarchy "reg:reg_inst" File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/aes_enc.vhd Line: 44
+Info (12128): Elaborating entity "add_round_key" for hierarchy "add_round_key:add_round_key_inst" File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/aes_enc.vhd Line: 54
+Info (12128): Elaborating entity "sub_byte" for hierarchy "sub_byte:sub_byte_inst" File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/aes_enc.vhd Line: 60
+Info (12128): Elaborating entity "sbox" for hierarchy "sub_byte:sub_byte_inst|sbox:\gen:0:sbox_inst" File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sub_byte.vhd Line: 31
+Info (12128): Elaborating entity "shift_rows" for hierarchy "shift_rows:shift_rows_inst" File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/aes_enc.vhd Line: 66
+Info (12128): Elaborating entity "mix_columns" for hierarchy "mix_columns:mix_columns_inst" File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/aes_enc.vhd Line: 71
+Info (12128): Elaborating entity "column_calculator" for hierarchy "mix_columns:mix_columns_inst|column_calculator:mix_columns_inst0" File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/mix_columns.vhd Line: 30
+Info (12128): Elaborating entity "gfmult_by2" for hierarchy "mix_columns:mix_columns_inst|column_calculator:mix_columns_inst0|gfmult_by2:gfmult_by2_inst0" File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/column_calculator.vhd Line: 43
+Info (12128): Elaborating entity "controller" for hierarchy "controller:controller_inst" File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/aes_enc.vhd Line: 79
+Info (12128): Elaborating entity "reg" for hierarchy "controller:controller_inst|reg:reg_inst" File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/controller.vhd Line: 36
+Info (12128): Elaborating entity "key_schedule" for hierarchy "key_schedule:key_schedule_inst" File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/aes_enc.vhd Line: 88
+Info (12128): Elaborating entity "key_sch_round_function" for hierarchy "key_schedule:key_schedule_inst|key_sch_round_function:key_sch_round_function_inst" File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/key_schedule.vhd Line: 45
+Info (276014): Found 20 instances of uninferred RAM logic
+    Info (276013): RAM logic "sub_byte:sub_byte_inst|sbox:\gen:0:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "sub_byte:sub_byte_inst|sbox:\gen:5:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "sub_byte:sub_byte_inst|sbox:\gen:10:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "sub_byte:sub_byte_inst|sbox:\gen:15:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "key_schedule:key_schedule_inst|key_sch_round_function:key_sch_round_function_inst|sbox:\gen_sboxes:13:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "key_schedule:key_schedule_inst|key_sch_round_function:key_sch_round_function_inst|sbox:\gen_sboxes:14:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "key_schedule:key_schedule_inst|key_sch_round_function:key_sch_round_function_inst|sbox:\gen_sboxes:15:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "key_schedule:key_schedule_inst|key_sch_round_function:key_sch_round_function_inst|sbox:\gen_sboxes:12:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "sub_byte:sub_byte_inst|sbox:\gen:4:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "sub_byte:sub_byte_inst|sbox:\gen:3:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "sub_byte:sub_byte_inst|sbox:\gen:9:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "sub_byte:sub_byte_inst|sbox:\gen:14:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "sub_byte:sub_byte_inst|sbox:\gen:8:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "sub_byte:sub_byte_inst|sbox:\gen:2:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "sub_byte:sub_byte_inst|sbox:\gen:7:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "sub_byte:sub_byte_inst|sbox:\gen:13:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "sub_byte:sub_byte_inst|sbox:\gen:12:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "sub_byte:sub_byte_inst|sbox:\gen:1:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "sub_byte:sub_byte_inst|sbox:\gen:6:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+    Info (276013): RAM logic "sub_byte:sub_byte_inst|sbox:\gen:11:sbox_inst|Ram0" is uninferred because MIF is not supported for the selected family File: C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd Line: 32
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 5158 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 258 input pins
+    Info (21059): Implemented 129 output pins
+    Info (21061): Implemented 4771 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4913 megabytes
+    Info: Processing ended: Fri Jun  6 13:56:51 2025
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:00:36
+
+

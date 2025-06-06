@@ -1,0 +1,13 @@
+-- begin_signature
+-- Memo_Control(g_NUM_BYTES
+-- 1)
+-- end_signature
+WIDTH=8;
+DEPTH=2;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	0 :	00000000;
+END;

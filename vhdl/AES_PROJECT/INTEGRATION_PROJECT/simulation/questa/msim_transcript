@@ -1,0 +1,625 @@
+# Reading pref.tcl
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2024.3 win64 Sep 10 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do INTEGRATION_PROJECT_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Intel Starter FPGA Edition-64 vmap 2024.3 Lib Mapping Utility 2024.09 Sep 10 2024
+# vmap work rtl_work 
+# Copying C:/altera/24.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/shift_rwos.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:00:43 on Jun 06,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/shift_rwos.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity shift_rows
+# -- Compiling architecture rtl of shift_rows
+# End time: 14:00:44 on Jun 06,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:00:44 on Jun 06,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sbox.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity sbox
+# -- Compiling architecture behavioral of sbox
+# End time: 14:00:44 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/reg.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:00:44 on Jun 06,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity reg
+# -- Compiling architecture behavioral of reg
+# End time: 14:00:44 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/gfmult_by2.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:00:44 on Jun 06,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/gfmult_by2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity gfmult_by2
+# -- Compiling architecture behavioral of gfmult_by2
+# End time: 14:00:44 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/add_round_key.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:00:44 on Jun 06,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/add_round_key.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity add_round_key
+# -- Compiling architecture rtl of add_round_key
+# End time: 14:00:44 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sub_byte.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:00:44 on Jun 06,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/sub_byte.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity sub_byte
+# -- Compiling architecture behavioral of sub_byte
+# -- Loading entity sbox
+# End time: 14:00:45 on Jun 06,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/key_sch_round_function.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:00:45 on Jun 06,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/key_sch_round_function.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity key_sch_round_function
+# -- Compiling architecture behavioral of key_sch_round_function
+# -- Loading entity sbox
+# End time: 14:00:45 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/controller.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:00:45 on Jun 06,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/controller.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controller
+# -- Compiling architecture behavioral of controller
+# -- Loading entity reg
+# -- Loading entity gfmult_by2
+# End time: 14:00:45 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/column_calculator.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:00:45 on Jun 06,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/column_calculator.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity column_calculator
+# -- Compiling architecture rtl of column_calculator
+# -- Loading entity gfmult_by2
+# End time: 14:00:45 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/mix_columns.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:00:45 on Jun 06,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/mix_columns.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mix_columns
+# -- Compiling architecture rtl of mix_columns
+# -- Loading entity column_calculator
+# End time: 14:00:45 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/key_schedule.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:00:45 on Jun 06,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/key_schedule.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity key_schedule
+# -- Compiling architecture behavioral of key_schedule
+# -- Loading entity reg
+# -- Loading entity key_sch_round_function
+# End time: 14:00:45 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/aes_enc.vhd}
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:00:46 on Jun 06,2025
+# vcom -reportprogress 300 -93 -work work C:/Users/LEGION/Desktop/INDUSTRIALES/MOVILIDAD/COSITAS_DE_CS/ASIGNATURAS/2A/SEMESTRE_2/POLE_PROJET_P11_IOT/HARDWARE_SECURITY_PART/UARTX/AES_PROJECT/INTEGRATION_PROJECT/aes_enc.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity aes_enc
+# -- Compiling architecture behavioral of aes_enc
+# -- Loading entity reg
+# -- Loading entity add_round_key
+# -- Loading entity sub_byte
+# -- Loading entity shift_rows
+# -- Loading entity mix_columns
+# -- Loading entity controller
+# -- Loading entity key_schedule
+# End time: 14:00:46 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+do testbench.tcl
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:01:01 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../inv_shift_rows.vhd 
+# ** Error: (vcom-7) Failed to open design unit file "../../inv_shift_rows.vhd" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 14:01:01 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera/24.1std/questa_fse/win64/vcom failed.
+# Error in macro ./testbench.tcl line 5
+# C:/altera/24.1std/questa_fse/win64/vcom failed.
+#     while executing
+# "vcom +acc ../../inv_shift_rows.vhd"
+do testbench.tcl
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:03:54 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../add_round_key.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity add_round_key
+# -- Compiling architecture rtl of add_round_key
+# End time: 14:03:54 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:03:54 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../controller.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controller
+# -- Compiling architecture behavioral of controller
+# -- Loading entity reg
+# -- Loading entity gfmult_by2
+# End time: 14:03:54 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:03:54 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity reg
+# -- Compiling architecture behavioral of reg
+# End time: 14:03:54 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:03:54 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../key_schedule.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity key_schedule
+# -- Compiling architecture behavioral of key_schedule
+# -- Loading entity reg
+# -- Loading entity key_sch_round_function
+# End time: 14:03:54 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:03:54 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../mix_columns.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mix_columns
+# -- Compiling architecture rtl of mix_columns
+# -- Loading entity column_calculator
+# End time: 14:03:54 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:03:54 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../shift_rows.vhd 
+# ** Error: (vcom-7) Failed to open design unit file "../../shift_rows.vhd" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 14:03:55 on Jun 06,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: C:/altera/24.1std/questa_fse/win64/vcom failed.
+# Error in macro ./testbench.tcl line 10
+# C:/altera/24.1std/questa_fse/win64/vcom failed.
+#     while executing
+# "vcom +acc ../../shift_rows.vhd"
+do testbench.tcl
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:04:38 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../add_round_key.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity add_round_key
+# -- Compiling architecture rtl of add_round_key
+# End time: 14:04:38 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:04:38 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../controller.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controller
+# -- Compiling architecture behavioral of controller
+# -- Loading entity reg
+# -- Loading entity gfmult_by2
+# End time: 14:04:38 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:04:38 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity reg
+# -- Compiling architecture behavioral of reg
+# End time: 14:04:38 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:04:38 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../key_schedule.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity key_schedule
+# -- Compiling architecture behavioral of key_schedule
+# -- Loading entity reg
+# -- Loading entity key_sch_round_function
+# End time: 14:04:38 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:04:38 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../mix_columns.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mix_columns
+# -- Compiling architecture rtl of mix_columns
+# -- Loading entity column_calculator
+# End time: 14:04:38 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:04:38 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../shift_rwos.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity shift_rows
+# -- Compiling architecture rtl of shift_rows
+# End time: 14:04:38 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:04:38 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../sub_byte.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity sub_byte
+# -- Compiling architecture behavioral of sub_byte
+# -- Loading entity sbox
+# End time: 14:04:39 on Jun 06,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:04:39 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../enc_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity test_enc
+# -- Compiling architecture behavior of test_enc
+# End time: 14:04:39 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Warning: (vsim-8689) Ignoring plusarg '+acc'.  Did you mean '-voptargs=+acc'?
+# vsim "+acc" work.test_dec -Lf 220model -Lf altera_mf 
+# Start time: 14:04:39 on Jun 06,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: (vopt-11) Could not find work.test_dec.
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=1.
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./testbench.tcl PAUSED at line 18
+do testbench.tcl
+# End time: 14:05:53 on Jun 06,2025, Elapsed time: 0:01:14
+# Errors: 1, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:05:53 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../add_round_key.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity add_round_key
+# -- Compiling architecture rtl of add_round_key
+# End time: 14:05:53 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:05:54 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../controller.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controller
+# -- Compiling architecture behavioral of controller
+# -- Loading entity reg
+# -- Loading entity gfmult_by2
+# End time: 14:05:54 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:05:54 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity reg
+# -- Compiling architecture behavioral of reg
+# End time: 14:05:54 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:05:54 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../key_schedule.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity key_schedule
+# -- Compiling architecture behavioral of key_schedule
+# -- Loading entity reg
+# -- Loading entity key_sch_round_function
+# End time: 14:05:54 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:05:54 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../mix_columns.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mix_columns
+# -- Compiling architecture rtl of mix_columns
+# -- Loading entity column_calculator
+# End time: 14:05:54 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:05:54 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../shift_rwos.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity shift_rows
+# -- Compiling architecture rtl of shift_rows
+# End time: 14:05:54 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:05:54 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../sub_byte.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity sub_byte
+# -- Compiling architecture behavioral of sub_byte
+# -- Loading entity sbox
+# End time: 14:05:54 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:05:54 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../enc_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity test_enc
+# -- Compiling architecture behavior of test_enc
+# End time: 14:05:55 on Jun 06,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# ** Warning: (vsim-8689) Ignoring plusarg '+acc'.  Did you mean '-voptargs=+acc'?
+# vsim "+acc" work.test_enc -Lf 220model -Lf altera_mf 
+# Start time: 14:05:55 on Jun 06,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Warning: (vopt-13) Recompile work.aes_enc(behavioral) because work.reg, work.add_round_key, work.sub_byte, work.shift_rows, work.mix_columns, work.controller, work.key_schedule have changed.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.test_enc(behavior)#1
+# Loading work.aes_enc(behavioral)#1
+# Loading work.reg(behavioral)#1
+# Loading work.add_round_key(rtl)#1
+# Loading work.sub_byte(behavioral)#1
+# Loading work.sbox(behavioral)#1
+# Loading work.shift_rows(rtl)#1
+# Loading work.mix_columns(rtl)#1
+# Loading work.column_calculator(rtl)#1
+# Loading work.controller(behavioral)#1
+# Loading work.reg(behavioral)#2
+# Loading work.gfmult_by2(behavioral)#1
+# Loading work.key_schedule(behavioral)#1
+# Loading work.key_sch_round_function(behavioral)#1
+# ** Note: ---------- Passed ----------
+#    Time: 110 ns  Iteration: 0  Instance: /test_enc
+# ** Note: ---------- Output must be: -------
+#    Time: 110 ns  Iteration: 0  Instance: /test_enc
+# ** Note: 320b6a19978511dcfb09dc021d842539
+#    Time: 110 ns  Iteration: 0  Instance: /test_enc
+# ** Note: ---------- Passed ----------
+#    Time: 220 ns  Iteration: 0  Instance: /test_enc
+# ** Note: ---------- Output must be: -------
+#    Time: 220 ns  Iteration: 0  Instance: /test_enc
+# ** Note: 2e2b34ca59fa4c883b2c8aefd44be966
+#    Time: 220 ns  Iteration: 0  Instance: /test_enc
+# ** Note: ---------- Passed ----------
+#    Time: 330 ns  Iteration: 0  Instance: /test_enc
+# ** Note: ---------- Output must be: -------
+#    Time: 330 ns  Iteration: 0  Instance: /test_enc
+# ** Note: 97ef6624f3ca9ea860367a0db47bd73a
+#    Time: 330 ns  Iteration: 0  Instance: /test_enc
+add wave -position end  sim:/test_enc/clk
+add wave -position end  sim:/test_enc/rst
+add wave -position end  sim:/test_enc/plaintext
+add wave -position end  sim:/test_enc/key
+add wave -position end  sim:/test_enc/done
+add wave -position end  sim:/test_enc/ciphertext
+# ** Error: invalid command name "nc/rst"
+# Error in macro ./testbench.tcl line 28
+# invalid command name "nc/rst"
+#     while executing
+# "nc/rst"
+do testbench.tcl
+# End time: 14:11:37 on Jun 06,2025, Elapsed time: 0:05:42
+# Errors: 1, Warnings: 3
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:11:37 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../add_round_key.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity add_round_key
+# -- Compiling architecture rtl of add_round_key
+# End time: 14:11:37 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:11:37 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../controller.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity controller
+# -- Compiling architecture behavioral of controller
+# -- Loading entity reg
+# -- Loading entity gfmult_by2
+# End time: 14:11:38 on Jun 06,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:11:38 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../reg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity reg
+# -- Compiling architecture behavioral of reg
+# End time: 14:11:38 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:11:38 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../key_schedule.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity key_schedule
+# -- Compiling architecture behavioral of key_schedule
+# -- Loading entity reg
+# -- Loading entity key_sch_round_function
+# End time: 14:11:38 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:11:38 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../mix_columns.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mix_columns
+# -- Compiling architecture rtl of mix_columns
+# -- Loading entity column_calculator
+# End time: 14:11:38 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:11:38 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../shift_rwos.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity shift_rows
+# -- Compiling architecture rtl of shift_rows
+# End time: 14:11:38 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:11:38 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../sub_byte.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity sub_byte
+# -- Compiling architecture behavioral of sub_byte
+# -- Loading entity sbox
+# End time: 14:11:38 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 14:11:38 on Jun 06,2025
+# vcom -reportprogress 300 "+acc" ../../enc_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity test_enc
+# -- Compiling architecture behavior of test_enc
+# End time: 14:11:38 on Jun 06,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Warning: (vsim-8689) Ignoring plusarg '+acc'.  Did you mean '-voptargs=+acc'?
+# vsim "+acc" work.test_enc -Lf 220model -Lf altera_mf 
+# Start time: 14:11:39 on Jun 06,2025
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.test_enc(behavior)#1
+# Loading work.aes_enc(behavioral)#1
+# Loading work.reg(behavioral)#1
+# Loading work.add_round_key(rtl)#1
+# Loading work.sub_byte(behavioral)#1
+# Loading work.sbox(behavioral)#1
+# Loading work.shift_rows(rtl)#1
+# Loading work.mix_columns(rtl)#1
+# Loading work.column_calculator(rtl)#1
+# Loading work.controller(behavioral)#1
+# Loading work.reg(behavioral)#2
+# Loading work.gfmult_by2(behavioral)#1
+# Loading work.key_schedule(behavioral)#1
+# Loading work.key_sch_round_function(behavioral)#1
+# ** Note: ---------- Passed ----------
+#    Time: 110 ns  Iteration: 0  Instance: /test_enc
+# ** Note: ---------- Output must be: -------
+#    Time: 110 ns  Iteration: 0  Instance: /test_enc
+# ** Note: 320b6a19978511dcfb09dc021d842539
+#    Time: 110 ns  Iteration: 0  Instance: /test_enc
+# ** Note: ---------- Passed ----------
+#    Time: 220 ns  Iteration: 0  Instance: /test_enc
+# ** Note: ---------- Output must be: -------
+#    Time: 220 ns  Iteration: 0  Instance: /test_enc
+# ** Note: 2e2b34ca59fa4c883b2c8aefd44be966
+#    Time: 220 ns  Iteration: 0  Instance: /test_enc
+# ** Note: ---------- Passed ----------
+#    Time: 330 ns  Iteration: 0  Instance: /test_enc
+# ** Note: ---------- Output must be: -------
+#    Time: 330 ns  Iteration: 0  Instance: /test_enc
+# ** Note: 97ef6624f3ca9ea860367a0db47bd73a
+#    Time: 330 ns  Iteration: 0  Instance: /test_enc
+# End time: 15:35:17 on Jun 06,2025, Elapsed time: 1:23:38
+# Errors: 0, Warnings: 1

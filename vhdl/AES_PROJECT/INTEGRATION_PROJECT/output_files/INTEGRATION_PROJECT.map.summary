@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Fri Jun  6 13:56:51 2025
+Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Revision Name : INTEGRATION_PROJECT
+Top-level Entity Name : aes_enc
+Family : MAX 10
+Total logic elements : 4,771
+    Total combinational functions : 4,771
+    Dedicated logic registers : 264
+Total registers : 264
+Total pins : 387
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

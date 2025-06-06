@@ -1,0 +1,74 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity Memo_Control is
+    generic (
+        g_NUM_BYTES : integer := 8
+    );
+    port (
+        i_Clk        : in std_logic;
+        i_RX_DV      : in std_logic;
+        i_RX_Byte    : in std_logic_vector(10 downto 0);
+        i_TX_Done    : in std_logic;
+        i_TX_Active  : in std_logic;
+        
+        o_TX_DV      : out std_logic;
+        o_TX_Byte    : out std_logic_vector(10 downto 0)
+    );
+end Memo_Control;
+
+architecture Behavioral of Memo_Control is
+
+    type t_State is (RECEIVING, SENDING);
+    signal r_State : t_State := RECEIVING;
+
+    type t_Memory is array (0 to g_NUM_BYTES - 1) of std_logic_vector(10 downto 0);
+    signal r_Mem         : t_Memory := (others => (others => '0'));
+    signal r_Recv_Index  : integer range 0 to g_NUM_BYTES := 0;
+    signal r_Send_Index  : integer range 0 to g_NUM_BYTES := 0;
+
+    signal r_TX_DV       : std_logic := '0';
+    signal r_TX_Byte     : std_logic_vector(10 downto 0) := (others => '0');
+
+begin
+
+    process(i_Clk)
+    begin
+        if rising_edge(i_Clk) then
+            case r_State is
+                when RECEIVING =>
+                    r_TX_DV <= '0';
+                    if i_RX_DV = '1' then
+                        r_Mem(r_Recv_Index) <= i_RX_Byte;
+                        if r_Recv_Index = g_NUM_BYTES - 1 then
+                            r_Recv_Index <= 0;
+                            r_State <= SENDING;
+                        else
+                            r_Recv_Index <= r_Recv_Index + 1;
+                        end if;
+                    end if;
+
+                when SENDING =>
+                    if i_TX_Active = '0' and i_TX_Done = '1' then
+                        if r_Send_Index < g_NUM_BYTES then
+                            r_TX_Byte <= r_Mem(r_Send_Index);
+                            r_TX_DV   <= '1';
+                            r_Send_Index <= r_Send_Index + 1;
+                        else
+                            r_TX_DV <= '0';
+                            r_Send_Index <= 0;
+                            r_State <= RECEIVING;
+                        end if;
+                    else
+                        r_TX_DV <= '0';
+                    end if;
+
+            end case;
+        end if;
+    end process;
+
+    o_TX_DV   <= r_TX_DV;
+    o_TX_Byte <= r_TX_Byte;
+
+end Behavioral;

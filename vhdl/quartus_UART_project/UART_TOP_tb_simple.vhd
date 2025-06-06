@@ -1,0 +1,66 @@
+--library ieee;
+--use ieee.std_logic_1164.all;
+--use ieee.numeric_std.all;
+--
+--entity UART_TOP_tb is
+--end UART_TOP_tb;
+--
+--architecture behavior of UART_TOP_tb is
+--
+--    -- Component under test signals
+--    signal i_Clk       : std_logic := '0';
+--    signal i_RX_Serial : std_logic := '1';
+--    signal o_TX_Serial : std_logic;
+--    signal i_TX_DV     : std_logic := '0';
+--    signal i_TX_Byte   : std_logic_vector(10 downto 0) := (others => '0');
+--    signal o_RX_DV     : std_logic;
+--    signal o_RX_Byte   : std_logic_vector(10 downto 0);
+--    signal o_TX_Done   : std_logic;
+--
+--    -- Clock period definition
+--    constant clk_period : time := 10 ns;
+--
+--begin
+--
+--    -- Instantiate the Unit Under Test (UUT)
+--    uut: entity work.UART_implementation
+--        port map (
+--            i_Clk       => i_Clk,
+--            i_RX_Serial => i_RX_Serial,
+--            o_TX_Serial => o_TX_Serial,
+--            i_TX_DV     => i_TX_DV,
+--            i_TX_Byte   => i_TX_Byte,
+--            o_RX_DV     => o_RX_DV,
+--            o_RX_Byte   => o_RX_Byte,
+--            o_TX_Done   => o_TX_Done
+--        );
+--
+--    -- Clock process
+--    clk_process : process
+--    begin
+--        while true loop
+--            i_Clk <= '0';
+--            wait for clk_period/2;
+--            i_Clk <= '1';
+--            wait for clk_period/2;
+--        end loop;
+--    end process;
+--
+--    -- Stimulus process
+--    stim_proc: process
+--    begin
+--        wait for 100 ns; 
+--        
+--        -- Send a byte
+--        i_TX_Byte <= "01010101010"; -- Example byte
+--        i_TX_DV <= '1';
+--        wait for clk_period;
+--        i_TX_DV <= '0';
+--
+--        -- Wait enough time for the transmission
+--        wait for 2000 ns;
+--
+--        wait;
+--    end process;
+--
+--end behavior;
